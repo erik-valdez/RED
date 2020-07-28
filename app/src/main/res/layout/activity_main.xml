@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/id_pbBatteryBlu"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background"
+        android:backgroundTint="@color/colorGray"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="55"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintEnd_toStartOf="@+id/id_pbContainer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_pbBatteryCar"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageButton
+        android:id="@+id/id_btnBack"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/id_btnClean"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <ImageButton
+        android:id="@+id/id_btnClean"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/id_btnMove"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_btnBack"
+        app:srcCompat="@mipmap/ic_broom_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/id_btnStop"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_stop_red_36dp" />
+
+    <ImageButton
+        android:id="@+id/id_btnMove"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_btnClean"
+        app:srcCompat="@mipmap/ic_move" />
+
+    <ProgressBar
+        android:id="@+id/id_pbBatteryCar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintEnd_toStartOf="@+id/id_pbBatteryBlu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_pbSpeed"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ProgressBar
+        android:id="@+id/id_pbSpeed"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background"
+        android:indeterminate="false"
+        android:max="3"
+        android:progress="2"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintEnd_toStartOf="@+id/id_pbBatteryCar"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="276dp" />
+
+    <ProgressBar
+        android:id="@+id/id_pbContainer"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_background"
+        android:max="3"
+        android:progress="2"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_pbBatteryBlu"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/id_tvState"
+        android:layout_width="161dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Estado: Detenido"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/id_btnClean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/id_ivSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_pbSpeed"
+        app:layout_constraintEnd_toEndOf="@+id/id_pbSpeed"
+        app:layout_constraintStart_toStartOf="@+id/id_pbSpeed"
+        app:layout_constraintTop_toTopOf="@+id/id_pbSpeed"
+        app:srcCompat="@mipmap/ic_speedometer_grey600_24dp" />
+
+    <ImageView
+        android:id="@+id/id_ivBatteryCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_pbBatteryCar"
+        app:layout_constraintEnd_toEndOf="@+id/id_pbBatteryCar"
+        app:layout_constraintStart_toStartOf="@+id/id_pbBatteryCar"
+        app:layout_constraintTop_toTopOf="@+id/id_pbBatteryCar"
+        app:srcCompat="@mipmap/ic_car_battery_grey600_24dp" />
+
+    <ImageView
+        android:id="@+id/id_ivBatteryBlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_pbBatteryBlu"
+        app:layout_constraintEnd_toEndOf="@+id/id_pbBatteryBlu"
+        app:layout_constraintStart_toStartOf="@+id/id_pbBatteryBlu"
+        app:layout_constraintTop_toTopOf="@+id/id_pbBatteryBlu"
+        app:srcCompat="@mipmap/ic_battery_bluetooth_variant_grey600_24dp" />
+
+    <ImageView
+        android:id="@+id/id_ivContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_pbContainer"
+        app:layout_constraintEnd_toEndOf="@+id/id_pbContainer"
+        app:layout_constraintStart_toStartOf="@+id/id_pbContainer"
+        app:layout_constraintTop_toTopOf="@+id/id_pbContainer"
+        app:srcCompat="@mipmap/ic_trash_can_outline_grey600_24dp" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/id_mvMapa"
+        android:layout_width="355dp"
+        android:layout_height="246dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/id_btnSpeed"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_btnClean"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_media_ff" />
+
+    <ImageView
+        android:id="@+id/id_ivAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_btnStop"
+        app:layout_constraintEnd_toStartOf="@+id/id_ivSyncAlert"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/id_pbContainer"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@mipmap/ic_alert_grey600_36dp" />
+
+    <ImageView
+        android:id="@+id/id_ivSyncAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_btnStop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/id_ivAlert"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@mipmap/ic_sync_alert_grey600_36dp" />
+
+    <ImageView
+        android:id="@+id/id_ivIcon"
+        android:layout_width="82dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icono" />
+
+    <TextView
+        android:id="@+id/id_tvTime"
+        android:layout_width="79dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text=" 0:0:0"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toEndOf="@+id/id_btnSpeed" />
+
+</android.support.constraint.ConstraintLayout>
